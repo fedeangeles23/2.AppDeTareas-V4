@@ -49,12 +49,15 @@ switch (argv[2]) {
         break;
     case 'comandos':  // Acción que sirve para ver la lista de comandos.
         console.log();
-        console.log("\n[C O M A N D O S   D I S P O N I B L E S] \n \n- node app leer \n- node app tareas\n- node app listar\n- node app agregar\n- node app borrar\n- node app borrar-u\n- node app borrar-p");
+        console.log("\n[C O M A N D O S   D I S P O N I B L E S] \n \n- node app leer \n- node app tareas\n- node app listar\n- node app estado 'nombre del estado'\n- node app nuevo-estado posicion 'nuevo estado' \n- node app agregar\n- node app borrar\n- node app borrar-u\n- node app borrar-p \n- node app ayuda");
         break;
     case 'ayuda': // Descripción de las acciones disponibles.
         console.log(`\n[S E C C I Ó N   D E   A Y U D A]\n`);
         console.log(`LEER:\n\nLa acción "leer" permite ver la información que hay dentro de los objetos literales del arreglo.\nSe accede con el comando [node app leer]\n`);
         console.log(`LISTAR:\n\nLa acción "listar" permite ver en la posición de cada tarea en forma de lista. Esto, con el fin de conocer la posición de la tarea que querramos eliminar o bien, la ubicación de dos tareas para colocar una nueva tarea intermedia.\nSe accede con el comando [node app listar]\n`);
+        console.log(`TAREAS: \n\nLa acción "tareas" muestra el total de tareas disponibles en nuestro array de objetos literales.\n`);
+        console.log(`ESTADO:\n\nLa acción "estado" permite filtrar las tareas por su estado y mostrarlas por terminal [node app estado + "estado"]\n`);
+        console.log(`NUEVO-ESTADO:\n\nLa acción "nuevo-estado" permite modificar el estado de una tarea indicando su posición y el nombre del nuevo estado.\nSe accede con el comando [node app nuevo-estado + posicion + nuevo estado].\nRecomendación: Listar previamente las tareas para corroborar la posición de las tareas antes de modificar el estado de las mismas.\n`);
         console.log(`AGREGAR:\n\nLa acción "agregar permite agregar una tarea nueva y su estado a final del arreglo.\nSe accede con el comando [node app agregar + titulo: estado:] indicando el título y el estado respectivamente.\n`);
         console.log(`BORRAR:\n\nLa acción "borrar" permite eliminar un objeto deseado en la posición que se le indique por terminal.\nSe accede con el comando [node app borrar + posición]. Se debe indicar la posición con el valor númerico correspondiente del [0,1,2...].\nRecomendación: Ejecutar previamente la acción "listar" para conocer la posicón exacta del objeto que se desee eliminar.\n`);
         console.log(`BORRAR-P:\n\nLa acción "borrar-p" elimina el primer objeto del arreglo.\nSe accede con el comando [node app borrar-p]\n`);
