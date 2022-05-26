@@ -1,5 +1,12 @@
 let {argv} = require("process");
-let {listar,mostrarTareas,listarTareas,agregarTarea, borrarPrimerTarea, borrarUltimaTarea, borrarTarea} = require("./funcionesDeTareas");
+let {listar,mostrarTareas,listarTareas,agregarTarea,borrarPrimerTarea,borrarUltimaTarea, borrarTarea,filtrarPorEstado} = require("./funcionesDeTareas");
+/* let tareas = require("./app-tareas/tareas.json") */
+
+/* Para evitar conflictos. Declaro las variables por fuera y después reasigno sus valores dentro del switch */
+
+let estado;
+let titulo;
+let posicion;
 
 switch (argv[2]) {
     case "leer": // Acción para leer los objetos literales del arreglo.
@@ -11,11 +18,16 @@ switch (argv[2]) {
         break;
     case "listar": // Acción para listar las tareas y ver su posición.
         console.log(`\n[P O S I C I Ó N   E N   E L   A R R E G L O] \n`);
-        listarTareas(); // // Función que muestra la posicón en el arreglo de cada tarea.
+        listarTareas(); // Función que muestra la posicón en el arreglo de cada tarea.
+        break;   
+    case "estado": 
+        estado = argv[3];
+        console.log(`\nLAS TAREAS CON ESTADO "${argv[3]}"  SON:\n---------------------------------------\n`);
+        filtrarPorEstado(estado); 
         break;
     case "agregar": // Acción para agregar una nueva tarea.
-        let titulo = argv[3]; // Guargo el titulo de la tarea en la posición 3
-        let estado = argv[4]; // Guargo el estado de la tarea en la posición 4
+        titulo = argv[3]; // Guargo el titulo de la tarea en la posición 3
+        estado = argv[4]; // Guargo el estado de la tarea en la posición 4
         console.log(agregarTarea(titulo, estado)); 
         console.log(`\n[Tarea agregada]`);
         break;
@@ -52,3 +64,5 @@ switch (argv[2]) {
         console.log(`Acción incorrecta, consulte la lista de comandos con [node app comandos]. \n Para mas información consulte por terminal introduciendo el comando [node app ayuda]`);
         break;
 }
+
+// switch declara la variable de forma global
