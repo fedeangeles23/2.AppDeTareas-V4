@@ -11,4 +11,4 @@ Práctica Integradora 2 - Haciendo una app de tareas (Versión final)
 
 **Curso de programación Web Full Stack - Fundación Formar - Digital House.**
 
-**Gracias a Banco Santander y Pampa Energía.**
+**Gracias a Banco Santander y Pampa Energía.** 
